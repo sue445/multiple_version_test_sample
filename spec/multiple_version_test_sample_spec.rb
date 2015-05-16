@@ -8,4 +8,8 @@ describe MultipleVersionTestSample do
   it "show ruby version" do
     puts "ruby: #{RUBY_VERSION}"
   end
+
+  it "show rails version" do
+    puts "rails: #{Rails::VERSION::STRING}"
+  end
 end
