@@ -1,3 +1,14 @@
 language: ruby
 rvm:
-  - 2.2.2
+  - 2.0.0-p598
+  - 2.1.6
+
+  # こういう書き方をすれば2.2.x系の最新版を使う
+  - 2.2
+
+  # 開発中のrubyのバージョン(いわゆるtrunk)
+  - ruby-head
+matrix:
+  allow_failures:
+  # 開発中のrubyでテストがこけることはあるだろうから許容する
+  - rvm: ruby-head
