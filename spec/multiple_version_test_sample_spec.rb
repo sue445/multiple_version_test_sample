@@ -12,4 +12,14 @@ describe MultipleVersionTestSample do
   it "show rails version" do
     puts "rails: #{Rails::VERSION::STRING}"
   end
+
+  describe "turbtable" do
+    before do
+      skip "rails3系ではturntableは動かないのでテストしない" unless rails4?
+    end
+
+    it "show turntable version" do
+      puts "turntable: #{ActiveRecord::Turntable::VERSION}"
+    end
+  end
 end

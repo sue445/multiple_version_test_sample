@@ -27,7 +27,13 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+
   spec.add_dependency "rails"
+
+  # NOTE: turntableはrails4系でしか動かないのでgemfileでrails3系を使ってる時にはdependencyに追加しない
+  if !$rails_version || $rails_version.to_i == 4
+    spec.add_development_dependency "activerecord-turntable", ">= 2.0.0"
+  end
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake", "~> 10.0"
