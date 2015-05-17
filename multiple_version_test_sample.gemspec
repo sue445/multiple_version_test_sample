@@ -29,6 +29,8 @@ Gem::Specification.new do |spec|
 
 
   spec.add_dependency "rails"
+  # 下記のように書いても可
+  # spec.add_dependency "rails", ">= 3.2.0", "< 5.0"
 
   # NOTE: turntableはrails4系でしか動かないのでgemfileでrails3系を使ってる時にはdependencyに追加しない
   if !$rails_version || $rails_version.to_i == 4
